@@ -73,7 +73,7 @@ else:
     FLOAT_TYPE = Float(asdecimal=False)
 
 Base = declarative_base()
-engine = create_engine(DB_ENGINE, pool_recycle=3600)
+engine = create_engine(DB_ENGINE, pool_pre_ping=True)
 
 class Fort(Base):
     __tablename__ = 'forts'
